@@ -1,0 +1,596 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  z-index: 1000;
+}
+.logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+li a {
+  position: relative;
+  color: white;
+  font-weight: 300;
+}
+li a::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  height: 5px;
+  top: 25px;
+  border-radius: 1rem;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+}
+li a:hover::before {
+  width: 100%;
+}
+.visit-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+}
+
+.visit-btn:hover {
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+  transform: scale(1.03);
+}
+#menu-icon {
+  font-size: 2rem;
+  display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 8rem 12%;
+  width: 100%;
+  position: relative;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.about img {
+  width: 30vw;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translateY(2rem);
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+}
+
+.info-box h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.info-box h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.info-box span {
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid black;
+  cursor: pointer;
+  font-weight: 500;
+  text-wrap: nowrap;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+}
+
+.socials i {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.socials i:hover {
+  transform: scale(1.1);
+  color: rgb(0, 157, 255);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.experience-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.experience img {
+  width: clamp(280px, 24vw, 400px);
+  border-radius: 3rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-card {
+  border: 2px solid black;
+  border-radius: 3rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: left;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.grid-card:hover {
+  transform: scale(1.02);
+  background-color: black;
+  color: white;
+}
+
+.grid-card i {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.grid-card span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: linear-gradient(to right, #009dff, #ff00ff);
+  background-clip: text;
+  color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(219, 219, 219);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #009dff, #ff00ff);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  border: 2px solid black;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background-color: black;
+  color: white;
+}
+
+
+
+.project-card:hover .btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.project-card:hover .btn:hover {
+  border: 2px solid white;
+  background-color: white;
+  color: black;
+}
+
+.project-card h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.input-box input {
+  position: relative;
+  border-radius: 3rem;
+  border: 2px solid black;
+  padding: 2rem 8rem;
+  font-size: 3rem;
+}
+
+.input-box input::placeholder {
+  font-size: 3rem;
+}
+
+.input {
+  position: relative;
+}
+
+.input i {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  font-size: 4rem;
+  left: 10px;
+  transform: translate(50%, -50%);
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  height: 10rempx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+footer ul li a {
+  color: black;
+  font-weight: 600;
+}
+
+.copyright {
+  font-size: 300;
+  margin-top: 2rem;
+  color: black;
+}
+
+@media (max-width: 1366px) {
+  .experience img {
+    width: 28vw;
+    height: 450px;
+    transform: translateY(-1rem);
+    object-fit: cover;
+  }
+
+  .projects {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    padding: 2rem 1rem;
+  }
+}
+/* Texto da apresentação */
+.info-box .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.info-box p {
+  max-width: 600px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444;
+} /* Links das redes sociais */
+.socials a {
+  color: black;
+}
+.socials a:hover {
+  color: rgb(0, 157, 255);
+} /* Botões como links */
+.btn {
+  display: inline-block;
+  color: black;
+} /* Tecnologias */
+.technologies {
+  margin-top: 6rem;
+}
+.technologies .section-title {
+  font-size: 3rem;
+  margin-bottom: 4.5rem;
+}
+.tech-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tech-list span {
+  padding: 0.7rem 1.4rem;
+  border: 2px solid black;
+  border-radius: 3rem;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+.tech-list span:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-3px);
+} /* Descrição dos cards */
+.grid-card p {
+  line-height: 1.6;
+  margin-top: 0.5rem;
+
+} /* Projetos */
+.project-card img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+.project-card p {
+  line-height: 1.6;
+} /* Contato */
+.input-box p {
+  max-width: 600px;
+  line-height: 1.6;
+  color: #444;
+}
+.input-box input {
+  width: 100%;
+  max-width: 600px;
+  padding: 1.2rem 4rem 1.2rem 2rem;
+  font-size: 1.1rem;
+}
+.input-box input::placeholder {
+  font-size: 1.1rem;
+}
+.input {
+  width: 100%;
+  max-width: 600px;
+}
+.input i {
+  top: 50%;
+  left: auto;
+  right: 2rem;
+  font-size: 1.5rem;
+  transform: translateY(-50%);
+} /* Footer */
+footer {
+  min-height: 10rem;
+  height: auto;
+}
+footer .socials {
+  gap: 1.5rem;
+}
+footer .socials i {
+  font-size: 1.8rem;
+}
+.copyright {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+} /* ========================= RESPONSIVIDADE ========================= */
+@media (max-width: 1000px) {
+  .about .about-container {
+    gap: 4rem;
+  }
+  .experience-info {
+    flex-direction: column;
+  }
+  .experience img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    width: 90%;
+    gap: 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  #menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .visit-btn {
+    display: none;
+  }
+  section {
+    padding: 7rem 6%;
+  }
+  .about {
+    padding-top: 9rem;
+  }
+  .about .about-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .about img {
+    width: 65vw;
+    max-width: 300px;
+  }
+  .info-box h1 {
+    font-size: 2.4rem;
+  }
+  .info-box span {
+    font-size: 1.3rem;
+  }
+  .info-box p {
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card img {
+    width: 100%;
+  }
+  .input-box input {
+    font-size: 1rem;
+  }
+  footer ul {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .about img {
+    width: 70vw;
+  }
+  .info-box h1 {
+    font-size: 2rem;
+  }
+  .info-box span {
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+  .tech-list span {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Tecnologias dos projetos */
+
+.project-tech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.project-tech span {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #aaa;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card .btn-group {
+  margin-top: auto;
+  padding-top: 1rem;
+}
