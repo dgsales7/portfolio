@@ -469,7 +469,8 @@ footer .socials i {
 .copyright {
   font-size: 0.9rem;
   margin-top: 1rem;
-} /* ========================= RESPONSIVIDADE ========================= */
+} 
+/* ========================= RESPONSIVIDADE ========================= */
 @media (max-width: 1000px) {
   .about .about-container {
     gap: 4rem;
